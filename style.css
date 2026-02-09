@@ -59,7 +59,11 @@ footer {
   text-decoration: underline;
 }
 
-h1, h2, p, a {
+h1,
+h2,
+h3,
+p,
+a {
   font-family: sans-serif;
   line-height: 1.6;
 }
@@ -72,7 +76,6 @@ nav {
   top: 0;
 }
 
-
 nav a {
   float: left;
   color: #e6e3e3;
@@ -80,7 +83,7 @@ nav a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
-  background-color: #3d3d3d;;
+  background-color: #3d3d3d;
 }
 
 nav a:hover {
@@ -92,12 +95,18 @@ section {
   display: block;
 }
 
+#home {
+  background-color: #f8f4f4;
+}
+
 .home-columns {
   display: flex;
   width: 75%;
   margin: 0 auto;
 }
-#services, #about, #reviews, #contact {
+#about,
+#reviews,
+#contact {
   display: flex;
 }
 
@@ -153,6 +162,71 @@ section {
 }
 
 #cta-button:hover {
+  background-color: #e6e3e3;
+  color: #3d3d3d;
+}
+
+#services {
+  background-color: #e0dcdc;
+  text-align: center;
+}
+
+#services-list {
+  padding: 50px;
+  display: inline-block;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#services-list h2 {
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3d3d3d;
+}
+
+.services-row {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.services-item {
+  width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-item p {
+  text-align: justify;
+}
+.services-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #3d3d3d;
+}
+.services-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.learn-more {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #3d3d3d;
+  color: #e6e3e3;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.learn-more:hover {
   background-color: #e6e3e3;
   color: #3d3d3d;
 }
