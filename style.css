@@ -59,8 +59,9 @@ footer {
   text-decoration: underline;
 }
 
-h1, p, a {
+h1, h2, p, a {
   font-family: sans-serif;
+  line-height: 1.6;
 }
 
 nav {
@@ -68,6 +69,7 @@ nav {
   display: inline-block;
   width: 100%;
   position: sticky;
+  top: 0;
 }
 
 
@@ -82,6 +84,75 @@ nav a {
 }
 
 nav a:hover {
+  background-color: #e6e3e3;
+  color: #3d3d3d;
+}
+
+section {
+  display: block;
+}
+
+.home-columns {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+}
+#services, #about, #reviews, #contact {
+  display: flex;
+}
+
+#left-column {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#left-column h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3d3d3d;
+}
+
+#left-column p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: #3d3d3d;
+  text-align: justify;
+}
+
+#right-column {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#right-column img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+#cta-button {
+  display: flex;
+  padding: 15px 30px;
+  background-color: #3d3d3d;
+  color: #e6e3e3;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 50%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cta-button:hover {
   background-color: #e6e3e3;
   color: #3d3d3d;
 }
