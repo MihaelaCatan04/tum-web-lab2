@@ -202,6 +202,7 @@ section {
 .services-item p {
   text-align: justify;
   margin-top: 20px;
+  font-family: sans-serif;
 }
 .services-item h3 {
   font-size: 22px;
