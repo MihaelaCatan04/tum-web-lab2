@@ -1,24 +1,26 @@
-# Lab 2 - Landing page
+# Mihail Catan Service Auto - Landing Page
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+This project is a responsive landing page for the **Mihail Catan Auto Repair**. The website presents the business, its services, and contact information, aiming to attract new customers and provide a professional online presence.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+## Description
 
-## Customer requirements
+The landing page includes:
+- **Navigation bar** with links to all main sections
+- **Call to action** buttons to encourage users to schedule a visit
+- **Six main sections**: Home, Services, About, Reviews, Contact, and Footer
+- **Modern, pleasant design** using only vanilla HTML and CSS (no frameworks)
+- **Responsive layout** for both desktop and mobile devices
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+## Screenshots
 
-## Dev requirements
+_Add screenshots here after deployment_
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+## Live Demo
 
-## Other requirements:
+[View the live site here](https://mihaelacatan04.github.io/tum-web-lab2/) 
 
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+## Author
+
+Mihaela Catan, FAF-231
+
+---
