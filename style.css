@@ -48,7 +48,7 @@ footer {
 
 #contact-info {
   color: #e6e3e3;
-  font-size: 18px;
+  font-size: 20px;
   display: block;
 }
 #contact-info a {
@@ -83,7 +83,7 @@ nav a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   background-color: #3d3d3d;
 }
 
@@ -149,16 +149,20 @@ section {
 
 #cta-button {
   display: flex;
-  padding: 15px 30px;
+  padding: 15px 40px;
   background-color: #3d3d3d;
   color: #e6e3e3;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
   width: 50%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  background-color: #3d3d3d;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 #cta-button:hover {
@@ -189,7 +193,72 @@ section {
 .services-row {
   display: flex;
   margin: auto;
-  justify-content: center;
+}
+
+#about {
+  background-color: #aba8a8;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#about-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#about-container h2 {
+  font-size: 36px;
+  color: #3d3d3d;
+  margin-bottom: 20px;
+}
+
+#about-container p {
+  font-size: 20px;
+  color: #3d3d3d;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+#about-container ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0 auto 40px auto; 
+  text-align: left;
+  background-color: #e0dcdc;
+}
+
+#about-container ul li {
+  font-size: 20px;
+  color: #3d3d3d;
+  line-height: 1.8;
+  margin: 15px 0; 
+  padding-left: 30px;
+}
+
+#about-container ul li::before {
+  content: "✓ ";
+  font-size: 22px;
+  font-weight: bold;
+  color: #3d3d3d;
+  margin-right: 10px; 
+}
+
+#about-container #cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #3d3d3d;
+  color: #e6e3e3;
+  text-decoration: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#about-container #cta-button:hover {
+  background-color: #e6e3e3;
+  color: #3d3d3d;
 }
 
 .services-item {
@@ -219,13 +288,15 @@ section {
 
 .learn-more {
   margin: 10px;
-  padding: 10px 20px;
   background-color: #3d3d3d;
   color: #e6e3e3;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 5px;
 }
 
 .learn-more:hover {
@@ -233,46 +304,6 @@ section {
   color: #3d3d3d;
 }
 
-#about {
-  background-color: #aba8a8;
-}
-
-#about-container {
-  width: 75%;
-  margin: 0 auto;
-  padding-bottom: 50px;
-}
-
-#about-container h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  text-align: center;
-  color: #3d3d3d;
-  display: inline-block;
-  width: 100%;
-
-}
-
-#about-container p {
-  font-size: 25px;
-  line-height: 1.6;
-  color: #3d3d3d;
-  text-align: justify;
-  display: inline-block;
-  width: 100%;
-}
-
-#about-container img {
-  max-width: 50%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  margin-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 #reviews {
   background-color: #868484;
@@ -305,14 +336,14 @@ section {
   border-radius: 10px;
 }
 .review-item p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #3d3d3d;
   text-align: justify;
 }
 
 .review-author {
-  font-size: 16px;
+  font-size: 20px;
   color: #3d3d3d;
   margin-top: 10px;
   text-align: right;
@@ -343,7 +374,7 @@ section {
   color: #e6e3e3;
 }
 #contact-container p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #e6e3e3;
   text-align: justify;
@@ -372,23 +403,26 @@ section {
 }
 
 #contact-form button {
-  padding: 10px 20px;
-  background-color: #3d3d3d;
-  color: #e6e3e3;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  padding: 15px 40px;
+  color: #3d3d3d;
+  background-color: #e6e3e3;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 #contact-form button:hover {
-  background-color: #e6e3e3;
-  color: #3d3d3d;
+  color: #e6e3e3;
+  background-color: #3d3d3d;
 }
 
 #contact-form label {
   display: block;
   margin-top: 10px;
   color: #e6e3e3;
-  font-size: 16px;
+  font-size: 20px;
   font-family: sans-serif;
 }
