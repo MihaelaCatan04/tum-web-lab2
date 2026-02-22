@@ -509,6 +509,11 @@ section {
     padding: 20px 0;
   }
 
+  .services-item p {
+    width: 100%;
+    text-align: justify;
+  }
+
   .review-row {
     flex-direction: column;
     align-items: center;
