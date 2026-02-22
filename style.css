@@ -1,5 +1,13 @@
-body, h1, h2, h3, p, a, button, input, textarea {
-  font-family: 'Roboto', 'Open Sans', 'Lato', sans-serif;
+body,
+h1,
+h2,
+h3,
+p,
+a,
+button,
+input,
+textarea {
+  font-family: "Roboto", "Open Sans", "Lato", sans-serif;
 }
 
 #logo-header {
@@ -166,14 +174,17 @@ section {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: 0 4px 16px rgba(61,61,61,0.15);
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(61, 61, 61, 0.15);
+  transition:
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
 }
 
 #cta-button:hover {
   background-color: #e6e3e3;
   color: #3d3d3d;
-  box-shadow: 0 8px 24px rgba(61,61,61,0.25);
+  box-shadow: 0 8px 24px rgba(61, 61, 61, 0.25);
 }
 
 #services {
@@ -228,7 +239,7 @@ section {
 #about-container ul {
   list-style: none;
   padding: 10px;
-  margin: 0 auto 40px auto; 
+  margin: 0 auto 40px auto;
   text-align: left;
   background-color: #e0dcdc;
 }
@@ -237,7 +248,7 @@ section {
   font-size: 20px;
   color: #3d3d3d;
   line-height: 1.8;
-  margin: 15px 0; 
+  margin: 15px 0;
   padding-left: 30px;
 }
 
@@ -246,7 +257,7 @@ section {
   font-size: 22px;
   font-weight: bold;
   color: #3d3d3d;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 #about-container #cta-button {
@@ -260,8 +271,11 @@ section {
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
-  box-shadow: 0 4px 16px rgba(61,61,61,0.15);
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(61, 61, 61, 0.15);
+  transition:
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
 }
 
 #about-container #cta-button:hover {
@@ -305,15 +319,17 @@ section {
   display: inline-block;
   padding: 15px 40px;
   border-radius: 5px;
-  box-shadow: 0 4px 16px rgba(61,61,61,0.15);
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(61, 61, 61, 0.15);
+  transition:
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
 }
 
 .learn-more:hover {
   background-color: #e6e3e3;
   color: #3d3d3d;
 }
-
 
 #reviews {
   background-color: #868484;
@@ -437,31 +453,54 @@ section {
   font-family: sans-serif;
 }
 
-.nav-hamburger {
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #f39c12;
+  z-index: 9999;
+  width: 0%;
   display: none;
-  float: right;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  flex-direction: column;
-  gap: 5px;
 }
 
-.nav-hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
+#call-now-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
   background-color: #e6e3e3;
-  transition: all 0.3s ease;
-  transform-origin: center;
+  font-size: 18px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(96, 96, 96, 0.35);
+  display: none;
+  align-items: center;
+  color: #3d3d3d;
+  text-decoration: none;
 }
 
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+#call-now-btn:hover {
+  background-color: #f39c12;
+  color: #e6e3e3;
+  text-decoration: none;
+}
 
 @media (max-width: 900px) {
+  #scroll-progress {
+    display: block;
+    animation: scroll-progress-animation auto linear;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes scroll-progress-animation {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   #banner {
     display: flex;
     flex-direction: column;
@@ -469,12 +508,12 @@ section {
     gap: 15px;
   }
   #slogan {
-    font-size: 36px; 
+    font-size: 36px;
     display: block;
     text-align: center;
   }
   #logo-header {
-    max-width: 180px; 
+    max-width: 180px;
     height: auto;
   }
 
@@ -482,8 +521,9 @@ section {
     flex-direction: column;
     width: 100%;
   }
-  
-  #left-column, #right-column {
+
+  #left-column,
+  #right-column {
     width: 100%;
     padding: 30px 20px;
     box-sizing: border-box;
@@ -520,45 +560,45 @@ section {
   }
 
   .review-item {
-    width: 100%; 
+    width: 100%;
     margin: 15px 0;
     box-sizing: border-box;
   }
 
   #about-container {
-    width: 90%;      
+    width: 90%;
     padding: 0 10px;
   }
 
   #contact-form input,
   #contact-form textarea {
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
   }
 
   #contact-form button {
-    width: 100%; 
+    width: 100%;
   }
 
   footer {
-    height: auto;  
+    height: auto;
     padding: 40px 20px;
   }
 
   #footer-text {
-    padding-top: 0;  
+    padding-top: 0;
     margin-bottom: 20px;
   }
-
 }
 
 @media (max-width: 480px) {
-  h1, h2 {
-    font-size: 24px; 
+  h1,
+  h2 {
+    font-size: 24px;
   }
-  
+
   #slogan {
-    font-size: 24px; 
+    font-size: 24px;
   }
 
   #left-column h2 {
@@ -566,11 +606,16 @@ section {
   }
 
   .review-item p {
-    font-size: 16px;  
+    font-size: 16px;
   }
 
   nav a {
     font-size: 16px;
     padding: 10px 12px;
+  }
+
+  #call-now-btn {
+    display: flex;
+    pointer-events: auto; 
   }
 }
