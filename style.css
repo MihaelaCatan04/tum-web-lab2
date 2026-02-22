@@ -77,6 +77,7 @@ nav {
   width: 100%;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 nav a {
@@ -434,4 +435,137 @@ section {
   color: #e6e3e3;
   font-size: 20px;
   font-family: sans-serif;
+}
+
+.nav-hamburger {
+  display: none;
+  float: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #e6e3e3;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  #banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  #slogan {
+    font-size: 36px; 
+    display: block;
+    text-align: center;
+  }
+  #logo-header {
+    max-width: 180px; 
+    height: auto;
+  }
+
+  .home-columns {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #left-column, #right-column {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  #left-column p {
+    font-size: 18px;
+  }
+
+  #services-list {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .services-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .services-item {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .review-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-item {
+    width: 100%; 
+    margin: 15px 0;
+    box-sizing: border-box;
+  }
+
+  #about-container {
+    width: 90%;      
+    padding: 0 10px;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%; 
+    box-sizing: border-box;
+  }
+
+  #contact-form button {
+    width: 100%; 
+  }
+
+  footer {
+    height: auto;  
+    padding: 40px 20px;
+  }
+
+  #footer-text {
+    padding-top: 0;  
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 24px; 
+  }
+  
+  #slogan {
+    font-size: 24px; 
+  }
+
+  #left-column h2 {
+    font-size: 22px;
+  }
+
+  .review-item p {
+    font-size: 16px;  
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
 }
