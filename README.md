@@ -8,8 +8,21 @@ The landing page includes:
 - **Navigation bar** with links to all main sections
 - **Call to action** buttons to encourage users to schedule a visit
 - **Six main sections**: Home, Services, About, Reviews, Contact, and Footer
-- **Modern, pleasant design** using only vanilla HTML and CSS (no frameworks)
+- **Modern, pleasant design** built with **Tailwind CSS** utility classes
 - **Responsive layout** for both desktop and mobile devices
+
+## Tech Stack
+
+- HTML5
+- Tailwind CSS (Play CDN)
+- Font Awesome (for star icons)
+
+## Run Locally
+
+1. Clone the repository.
+2. Open `index.html` in your browser.
+
+No build step is required because Tailwind is loaded from CDN.
 
 ## Screenshots
 
