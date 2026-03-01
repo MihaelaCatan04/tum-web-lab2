@@ -1,0 +1,52 @@
+#mascot-wrapper {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 9998;
+  width: 100px;
+  text-decoration: none;
+  opacity: 0;
+  animation: appear 1s ease 2.5s forwards;
+}
+
+@keyframes appear {
+  to { opacity: 1; }
+}
+
+#mascot-img {
+  width: 100px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0);     }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0);     }
+}
+
+#mascot-bubble {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 110px;
+  background: white;
+  border: 2px solid #f39c12;
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 180px;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: #3d3d3d;
+  pointer-events: none;
+}
+
+#mascot-wrapper:hover #mascot-bubble {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  #mascot-wrapper { width: 70px; left: 10px; }
+  #mascot-img     { width: 70px; }
+  #mascot-bubble  { left: 80px; width: 160px; font-size: 12px; }
+}
