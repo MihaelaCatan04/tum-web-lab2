@@ -1,0 +1,24 @@
+items:
+  - name: "Ion D."
+    rating: 5
+    quote: "Mi-au schimbat uleiul rapid și au verificat întreaga mașină. Profesionalism total!"
+
+  - name: "Maria P."
+    rating: 5
+    quote: "Am avut o problemă cu frânele, iar echipa a rezolvat totul în aceeași zi. Recomand!"
+
+  - name: "Mihai S."
+    rating: 5
+    quote: "Serviciul pentru baterie și aer condiționat a fost impecabil. Personal foarte atent."
+
+  - name: "Ana L."
+    rating: 5
+    quote: "Mi-au reparat motorul fără să încarce costuri suplimentare inutile. Corecți și rapizi."
+
+  - name: "Victor C."
+    rating: 5
+    quote: "Atmosfera în service este plăcută, iar echipa explică fiecare problemă. Recomand cu încredere!"
+
+  - name: "Elena M."
+    rating: 5
+    quote: "Programările se fac rapid, prețurile sunt corecte, iar calitatea serviciilor e excelentă."
