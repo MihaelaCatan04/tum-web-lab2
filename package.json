@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "decap-cms-app": "^3.10.1"
+    "decap-cms-app": "^3.10.1",
+    "js-yaml": "^4.1.1"
   }
 }
