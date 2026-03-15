@@ -1,474 +1,489 @@
 <!doctype html>
-<html>
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mihail Catan Auto Repair</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/logo-black.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="mascot.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Roboto", "Open Sans", "Lato", "sans-serif"],
+              sans:    ['Barlow', 'sans-serif'],
+              display: ['Barlow Condensed', 'sans-serif'],
+            },
+            colors: {
+              amber: {
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+              },
+              steel: {
+                900: '#111111',
+                800: '#1a1a1a',
+                700: '#252525',
+                600: '#2e2e2e',
+              },
             },
           },
         },
       };
     </script>
-    <link rel="stylesheet" href="mascot.css" />
-    <link rel="icon" href="img/logo-black.png" type="image/png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
-  <body class="font-sans text-[#3d3d3d]">
+
+  <body class="font-sans bg-stone-100 text-neutral-800">
+
     <div id="scroll-progress"></div>
-    <a
-      href="tel:+37369846284"
-      id="call-now-btn"
-      class="fixed bottom-7 right-6 hidden items-center rounded-full bg-[#e6e3e3] px-[22px] py-[14px] text-lg text-[#3d3d3d] shadow-[0_4px_20px_rgba(96,96,96,0.35)] transition hover:bg-amber-500 hover:text-white max-[480px]:flex"
-    >
-      &#9742
+
+    <a href="tel:+37369846284"
+       id="call-now-btn"
+       aria-label="Sună acum"
+       class="fixed bottom-7 right-5 z-[9997] hidden items-center rounded-full bg-amber-500 px-5 py-3.5 text-xl text-white shadow-[0_4px_20px_rgba(245,158,11,0.45)] transition hover:bg-amber-600 max-[480px]:flex">
+      &#9742;
     </a>
+
     <a href="#contact" id="mascot-wrapper" aria-label="Mergi la Contact">
       <div id="mascot-bubble">Programează o vizită azi și conduci liniștit mâine!</div>
-      <img id="mascot-img" src="img/mascot.png" alt="Mascota Mikey"/>
+      <img id="mascot-img" src="img/mascot.png" alt="Mascota Mikey" />
     </a>
+
     <header>
-      <div
-        id="banner"
-        class="flex items-center justify-center gap-[15px] bg-gradient-to-r from-[#e6e3e3] via-[#6e6a6a] to-[#3d3d3d] p-[30px] text-center max-[900px]:flex-col max-[480px]:p-5"
-      >
-        <img
-          src="img/logo-white.png"
-          alt="Logo Mihail Catan Auto Repair"
-          id="logo-header"
-          class="inline-block h-auto max-w-[300px] align-middle max-[900px]:max-w-[180px]"
-        />
-        <h1
-          id="slogan"
-          class="inline-block align-middle text-[100px] leading-[1.1] text-[#e6e3e3] max-[900px]:block max-[900px]:text-center max-[900px]:text-4xl max-[480px]:text-2xl"
-        >
-          Mașina Ta, Prioritatea Noastră
+      <div id="banner"
+           class="relative flex items-center justify-center gap-10 overflow-hidden bg-steel-800 px-10 py-12
+                  max-[900px]:flex-col max-[900px]:gap-5 max-[900px]:px-6 max-[900px]:py-9
+                  max-[480px]:px-4 max-[480px]:py-7">
+
+        <img src="img/logo-white.png"
+             alt="Logo Mihail Catan Auto Repair"
+             class="h-auto w-full max-w-[220px] max-[900px]:max-w-[160px]" />
+
+        <h1 class="font-display text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold uppercase leading-[1.05]
+                   tracking-tight text-stone-200 max-[900px]:text-center">
+          Mașina Ta,<br>Prioritatea Noastră
         </h1>
       </div>
-      <nav class="sticky top-0 z-[100] flex w-full flex-wrap bg-[#3d3d3d]">
-        <a
-          href="#home"
-          class="block bg-[#3d3d3d] px-4 py-[14px] text-center text-xl text-[#e6e3e3] no-underline transition hover:bg-amber-500 hover:text-white max-[480px]:px-3 max-[480px]:py-[10px] max-[480px]:text-base"
-          >Acasă</a
-        >
-        <a
-          href="#services"
-          class="block bg-[#3d3d3d] px-4 py-[14px] text-center text-xl text-[#e6e3e3] no-underline transition hover:bg-amber-500 hover:text-white max-[480px]:px-3 max-[480px]:py-[10px] max-[480px]:text-base"
-          >Servicii</a
-        >
-        <a
-          href="#about"
-          class="block bg-[#3d3d3d] px-4 py-[14px] text-center text-xl text-[#e6e3e3] no-underline transition hover:bg-amber-500 hover:text-white max-[480px]:px-3 max-[480px]:py-[10px] max-[480px]:text-base"
-          >Despre noi</a
-        >
-        <a
-          href="#reviews"
-          class="block bg-[#3d3d3d] px-4 py-[14px] text-center text-xl text-[#e6e3e3] no-underline transition hover:bg-amber-500 hover:text-white max-[480px]:px-3 max-[480px]:py-[10px] max-[480px]:text-base"
-          >Recenzii</a
-        >
-        <a
-          href="#contact"
-          class="block bg-[#3d3d3d] px-4 py-[14px] text-center text-xl text-[#e6e3e3] no-underline transition hover:bg-amber-500 hover:text-white max-[480px]:px-3 max-[480px]:py-[10px] max-[480px]:text-base"
-          >Contact</a
-        >
+
+      <nav class="sticky top-0 z-[100] flex w-full flex-wrap bg-steel-900 border-b-2 border-amber-500">
+        <a href="#home"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Acasă
+        </a>
+        <a href="#services"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Servicii
+        </a>
+        <a href="#about"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Despre noi
+        </a>
+        <a href="#reviews"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Recenzii
+        </a>
+        <a href="#contact"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Contact
+        </a>
       </nav>
     </header>
+
     <main>
-      <section id="home" class="block bg-[#f8f4f4]">
-        <div class="mx-auto flex w-3/4 max-[900px]:w-full max-[900px]:flex-col">
-          <div
-            id="left-column"
-            class="flex w-1/2 flex-col justify-center p-[50px] max-[900px]:box-border max-[900px]:w-full max-[900px]:px-5 max-[900px]:py-[30px]"
-          >
-            <h2 class="mb-5 text-center text-[28px] leading-[1.6] text-[#3d3d3d] max-[480px]:text-[22px]">
-              Bine ați venit la <br />
-              Mihail Catan Auto Repair
+
+      <section id="home" class="bg-stone-100">
+        <div class="mx-auto grid max-w-5xl grid-cols-2 items-center gap-16 px-10 py-20
+                    max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+          <div>
+            <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-extrabold uppercase leading-[1.1] text-neutral-800">
+              Bine ați venit la<br>
+              <span class="text-amber-500">Mihail Catan</span> Auto Repair
             </h2>
-            <p class="text-justify text-[25px] leading-[1.6] text-[#3d3d3d] max-[900px]:text-lg max-[900px]:text-left">
-              Oferim servicii auto de înaltă calitate, cu onestitate și
-              profesionalism. Tehnicienii noștri experimentați se asigură că
-              vehiculul tău funcționează în siguranță și fără probleme. De la
-              întreținere de rutină la reparații complexe, toate serviciile
-              noastre sunt competitive ca preț și calitate. Satisfacția ta este
-              prioritatea noastră, iar scopul nostru este să depășim așteptările
-              tale la fiecare vizită.
+            <div class="my-4 h-1 w-12 bg-amber-500"></div>
+            <p class="mb-9 text-[1.05rem] leading-[1.8] text-neutral-600">
+              Oferim servicii auto de înaltă calitate, cu onestitate și profesionalism.
+              Tehnicienii noștri experimentați se asigură că vehiculul tău funcționează
+              în siguranță și fără probleme. De la întreținere de rutină la reparații
+              complexe, toate serviciile noastre sunt competitive ca preț și calitate.
+              Satisfacția ta este prioritatea noastră.
             </p>
-            <a
-              href="#contact"
-              id="cta-button"
-              class="mx-auto mt-6 flex w-fit justify-center rounded-[8px] bg-amber-500 px-10 py-[15px] text-xl font-medium text-white shadow-[0_4px_16px_rgba(243,156,18,0.35)] transition hover:bg-amber-500 hover:text-white hover:shadow-[0_8px_24px_rgba(243,156,18,0.45)] max-[480px]:w-full max-[480px]:text-center"
-              >Programează o vizită</a
-            >
+            <a href="#contact"
+               class="inline-block rounded font-display text-sm font-bold uppercase tracking-widest
+                      bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                      transition hover:bg-amber-600 hover:shadow-[0_6px_28px_rgba(245,158,11,0.45)]
+                      max-[480px]:w-full max-[480px]:text-center">
+              Programează o vizită
+            </a>
           </div>
-          <div
-            id="right-column"
-            class="flex w-1/2 flex-col justify-center p-[50px] max-[900px]:box-border max-[900px]:w-full max-[900px]:px-5 max-[900px]:py-[30px]"
-          >
-            <img
-              src="img/car.jpg"
-              alt="Imagine mașină"
-              id="home-image"
-              class="h-auto max-w-full object-cover object-center"
-            />
+          <div id="home-image-wrap">
+            <img src="img/car.jpg"
+                 alt="Imagine mașină"
+                 class="h-[340px] w-full rounded object-cover object-center
+                        max-[900px]:h-[240px]" />
           </div>
         </div>
       </section>
 
-      <section id="services" class="block bg-[#e0dcdc] text-center">
-        <div
-          id="services-list"
-          class="mx-auto inline-block w-3/4 p-[50px] max-[900px]:box-border max-[900px]:w-full max-[900px]:p-5"
-        >
-          <h2 class="mb-5 inline-block text-[28px] leading-[1.6] text-[#3d3d3d]">
-            Servicii disponibile
+      <section id="services" class="bg-steel-800">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Servicii <span class="text-amber-500">disponibile</span>
           </h2>
-          <div class="mx-auto flex max-[900px]:flex-col max-[900px]:gap-5">
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img src="img/oil.png" alt="Schimb ulei" class="services-image" />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Menține motorul în stare optimă cu schimb rapid de ulei. Folosim
-                uleiuri de calitate superioară pentru performanță și
-                durabilitate. Schimbul regulat de ulei prelungește viața motorului.
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <div class="mt-2 grid grid-cols-3 gap-6
+                      max-[900px]:grid-cols-2
+                      max-[480px]:grid-cols-1">
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="droplets" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Menține motorul în stare optimă cu schimb rapid de ulei. Folosim uleiuri de calitate
+                superioară pentru performanță și durabilitate.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img
-                src="img/tire.png"
-                alt="Servicii roți"
-                class="services-image"
-              />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Asigură siguranța pe drum cu serviciile noastre pentru roți.
-                Oferim rotire, echilibrare și înlocuire anvelope de calitate.
-                Performanță și durabilitate maxime pentru mașina ta.
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="circle-dot" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Asigură siguranța pe drum cu serviciile noastre pentru roți. Oferim rotire,
+                echilibrare și înlocuire anvelope de calitate.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img
-                src="img/brake.png"
-                alt="Reparații frâne"
-                class="services-image"
-              />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Siguranța ta este prioritară. Diagnosticul frânelor este
-                complet. Reparațiile asigură oprirea eficientă a mașinii în
-                orice situație. Frânele bine întreținute sunt esențiale.
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="car-front" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Siguranța ta este prioritară. Diagnosticul complet al frânelor asigură oprirea
+                eficientă a mașinii în orice situație.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
-          </div>
-          <div class="mx-auto flex max-[900px]:flex-col max-[900px]:gap-5">
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img
-                src="img/engine.png"
-                alt="Reparații motor"
-                class="services-image"
-              />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Oferim servicii complete pentru motorul mașinii tale. De la
-                reparații minore la revizii majore, totul este acoperit.
-                Funcționarea optimă a vehiculului tău este garantată.
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="waypoints" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Servicii complete pentru motorul mașinii tale. De la reparații minore la revizii
+                majore, funcționarea optimă este garantată.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img
-                src="img/battery.png"
-                alt="Servicii baterie"
-                class="services-image"
-              />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Asigură pornirea mașinii fără probleme cu bateria verificată.
-                Testăm, înlocuim și întreținem pentru a evita defecțiuni
-                neașteptate. Bateria în stare bună este esențială pentru performanța mașinii.
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="battery-charging" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Asigură pornirea mașinii fără probleme. Testăm, înlocuim și întreținem bateria
+                pentru a evita defecțiuni neașteptate.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
-            <div
-              class="flex w-[30%] flex-col items-center p-5 max-[900px]:w-full max-[900px]:px-0 max-[900px]:py-5"
-            >
-              <img
-                src="img/air.png"
-                alt="Servicii aer condiționat"
-                class="services-image"
-              />
-              <p class="mt-5 text-justify text-xl leading-[1.6]">
-                Rămâi confortabil cu serviciul nostru de aer condiționat.
-                Diagnosticăm și reparăm orice problemă a sistemului AC.
-                Funcționarea eficientă asigură temperatură optimă.
+
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="wind" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                Rămâi confortabil cu serviciul nostru de aer condiționat. Diagnosticăm și reparăm
+                orice problemă a sistemului AC.
               </p>
-              <a
-                class="m-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-                href="#contact"
-                >Află mai mult</a
-              >
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
             </div>
+
           </div>
         </div>
       </section>
 
-      <section id="about" class="block bg-[#aba8a8] py-[60px] text-center">
-        <div
-          id="about-container"
-          class="mx-auto w-3/4 max-[900px]:w-[90%] max-[900px]:px-[10px]"
-        >
-          <h2 class="mb-5 text-[36px] leading-[1.6] text-[#3d3d3d] max-[480px]:text-2xl">
-            De ce să ne alegi?
+      <section id="about" class="bg-stone-100">
+        <div class="mx-auto grid max-w-5xl grid-cols-2 items-start gap-16 px-10 py-20
+                    max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+          <div>
+            <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                       leading-[1.1] tracking-wide text-neutral-800">
+              De ce să <span class="text-amber-500">ne alegi?</span>
+            </h2>
+            <div class="my-4 h-1 w-12 bg-amber-500"></div>
+            <p class="mb-6 text-[1.05rem] leading-[1.8] text-neutral-600">
+              La Mihail Catan Auto Repair, ne mândrim cu angajamentul nostru față de calitate,
+              onestitate și satisfacția clienților. Iată de ce suntem alegerea potrivită:
+            </p>
+
+            <ul class="mb-9 divide-y divide-stone-200">
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                Experiență de peste 30 ani în reparații și întreținere auto pentru orice tip de automobil.
+              </li>
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                Explicăm fiecare reparație în detaliu și oferim întotdeauna un preț corect.
+              </li>
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                Folosim doar scule profesionale și piese de calitate superioară.
+              </li>
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                Lucrări rapide și eficiente — fără așteptare inutilă.
+              </li>
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                Servicii complete: schimb ulei, frâne, baterie, motor și aer condiționat.
+              </li>
+            </ul>
+
+            <a href="#contact"
+               class="inline-block rounded font-display text-sm font-bold uppercase tracking-widest
+                      bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                      transition hover:bg-amber-600 max-[480px]:w-full max-[480px]:text-center">
+              Programează o vizită
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4 self-center">
+            <div class="flex flex-col items-center rounded border-b-[3px] border-amber-500
+                        bg-steel-800 px-6 py-8 text-center">
+              <span class="font-display text-[2.8rem] font-extrabold leading-none text-amber-500">30+</span>
+              <span class="mt-2 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">Ani experiență</span>
+            </div>
+            <div class="flex flex-col items-center rounded border-b-[3px] border-amber-500
+                        bg-steel-800 px-6 py-8 text-center">
+              <span class="font-display text-[2.8rem] font-extrabold leading-none text-amber-500">6</span>
+              <span class="mt-2 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">Servicii complete</span>
+            </div>
+            <div class="flex flex-col items-center rounded border-b-[3px] border-amber-500
+                        bg-steel-800 px-6 py-8 text-center">
+              <span class="font-display text-[2.8rem] font-extrabold leading-none text-amber-500">100%</span>
+              <span class="mt-2 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">Piese calitate</span>
+            </div>
+            <div class="flex flex-col items-center rounded border-b-[3px] border-amber-500
+                        bg-steel-800 px-6 py-8 text-center">
+              <span class="font-display text-[2rem] font-extrabold leading-none text-amber-500">★★★★★</span>
+              <span class="mt-2 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">Satisfacție clienți</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="reviews" class="bg-steel-700">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Ce spun <span class="text-amber-500">clienții</span>
           </h2>
-          <p class="mb-[30px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-            La Mihail Catan Auto Repair, ne mândrim cu angajamentul nostru față
-            de calitate, onestitate și satisfacția clienților. Iată de ce suntem
-            alegerea potrivită pentru toate nevoile tale auto:
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <div class="mt-2 grid grid-cols-3 gap-5
+                      max-[900px]:grid-cols-2
+                      max-[580px]:grid-cols-1">
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Mi-au schimbat uleiul rapid și au verificat întreaga mașină. Profesionalism total!</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Ion D.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Am avut o problemă cu frânele, iar echipa a rezolvat totul în aceeași zi. Recomand!</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Maria P.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Serviciul pentru baterie și aer condiționat a fost impecabil. Personal foarte atent.</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Mihai S.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Mi-au reparat motorul fără să încarce costuri suplimentare inutile. Corecți și rapizi.</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Ana L.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Atmosfera în service este plăcută, iar echipa explică fiecare problemă. Recomand cu încredere!</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Victor C.</p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">Programările se fac rapid, prețurile sunt corecte, iar calitatea serviciilor e excelentă.</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— Elena M.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-steel-900">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Contactează<span class="text-amber-500">-ne</span>
+          </h2>
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <p class="mx-auto mb-10 max-w-xl text-[1.05rem] leading-[1.8] text-stone-400">
+            Ești gata să programezi următoarea vizită sau ai întrebări despre serviciile noastre?
+            Suntem aici să te ajutăm! Abia așteptăm să te auzim.
           </p>
-          <ul class="mx-auto mb-10 list-none bg-[#e0dcdc] p-[10px] text-left">
-            <li class="my-[15px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-              ✓ Experiență peste 30 ani de reparații și întreținere auto la orice
-              tip de automobil.
-            </li>
-            <li class="my-[15px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-              ✓ Explicăm fiecare reparație și oferim preț corect.
-            </li>
-            <li class="my-[15px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-              ✓ Folosim doar scule și piese de calitate.
-            </li>
-            <li class="my-[15px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-              ✓ Fără așteptare inutilă.
-            </li>
-            <li class="my-[15px] text-[20px] leading-[1.8] text-[#3d3d3d]">
-              ✓ Servicii complete: de la schimb ulei, frâne și baterie, până la
-              reparații motor și aer condiționat.
-            </li>
-          </ul>
-          <a
-            href="#contact"
-            id="cta-button"
-            class="mt-[10px] inline-block rounded-[5px] bg-[#3d3d3d] px-10 py-[15px] text-xl text-[#e6e3e3] shadow-[0_4px_16px_rgba(61,61,61,0.15)] transition hover:bg-amber-500 hover:text-white"
-            >Programează o vizită</a
-          >
-        </div>
-      </section>
 
-      <section id="reviews" class="flex bg-[#868484] text-center">
-        <div id="reviews-container" class="mx-auto w-3/4 p-[50px] max-[900px]:w-full max-[900px]:p-4">
-          <h2 class="mb-5 text-center text-[28px] leading-[1.6] text-[#3d3d3d]">
-            Recenzii clienți
-          </h2>
-          <div class="flex justify-center max-[900px]:flex-col max-[900px]:items-center">
-            <div
-              class="my-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Mi-au schimbat uleiul rapid și au verificat întreaga mașină.
-                Profesionalism total!"
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Ion D.</p>
-            </div>
-            <div
-              class="m-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Am avut o problemă cu frânele, iar echipa a rezolvat totul în
-                aceeași zi. Recomand!"
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Maria P.</p>
-            </div>
-            <div
-              class="my-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Serviciul pentru baterie și aer condiționat a fost impecabil.
-                Personal foarte atent."
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Mihai S.</p>
-            </div>
-          </div>
-          <div class="flex justify-center max-[900px]:flex-col max-[900px]:items-center">
-            <div
-              class="my-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Mi-au reparat motorul fără să încarce costuri suplimentare
-                inutile. Corecți și rapizi."
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Ana L.</p>
-            </div>
-            <div
-              class="m-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Atmosfera în service este plăcută, iar echipa explică fiecare
-                problemă. Recomand cu încredere!"
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Victor C.</p>
-            </div>
-            <div
-              class="my-5 inline-block w-[30%] rounded-[10px] bg-[#e0dcdc] p-5 align-top max-[900px]:my-[15px] max-[900px]:w-full max-[900px]:box-border"
-            >
-              <p class="text-left text-xl leading-[1.6] text-[#3d3d3d] max-[480px]:text-base">
-                "Programările se fac rapid, prețurile sunt corecte, iar
-                calitatea serviciilor e excelentă."
-              </p>
-              <div class="mt-[10px] text-left text-xl text-amber-500 whitespace-nowrap">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p class="mt-[10px] text-right text-xl text-[#3d3d3d]">- Elena M.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <form id="contact-form" class="mx-auto flex max-w-lg flex-col text-left">
 
-      <section id="contact" class="flex bg-[#4c4c4c] text-center text-[#e6e3e3]">
-        <div id="contact-container" class="mx-auto w-3/4 p-[50px] max-[900px]:w-full max-[900px]:px-5 max-[900px]:py-8">
-          <h2 class="mb-5 text-center text-[28px] leading-[1.6] text-[#e6e3e3]">
-            Contactează-ne
-          </h2>
-          <p class="text-left text-xl leading-[1.6] text-[#e6e3e3] max-[900px]:text-base">
-            Ești gata să programezi următoarea vizită sau ai întrebări despre
-            serviciile noastre? Suntem aici să te ajutăm! Contactează-ne astăzi
-            pentru a programa o întâlnire sau pentru a afla mai multe despre cum
-            te putem ajuta cu toate nevoile tale auto. Abia așteptăm să te
-            auzim!
-          </p>
-          <form id="contact-form" class="mt-5 flex flex-col items-center">
-            <label for="name" class="mt-[10px] block text-xl text-[#e6e3e3]"
-              >Nume:</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="my-[10px] w-1/2 rounded-[5px] border-none p-[10px] max-[900px]:w-full max-[900px]:box-border"
-            />
-            <label for="email" class="mt-[10px] block text-xl text-[#e6e3e3]"
-              >Email:</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="my-[10px] w-1/2 rounded-[5px] border-none p-[10px] max-[900px]:w-full max-[900px]:box-border"
-            />
-            <label for="message" class="mt-[10px] block text-xl text-[#e6e3e3]"
-              >Mesaj:</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              required
-              class="my-[10px] w-1/2 rounded-[5px] border-none p-[10px] max-[900px]:w-full max-[900px]:box-border"
-            ></textarea>
-            <button
-              type="submit"
-              class="mt-[10px] rounded-[5px] border-none bg-[#e6e3e3] px-10 py-[15px] text-xl text-[#3d3d3d] transition hover:bg-amber-500 hover:text-white max-[900px]:w-full"
-            >
+            <label for="name"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Nume
+            </label>
+            <input type="text" id="name" name="name" placeholder="ex. Ion Popescu" required
+                   class="mb-5 rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                          text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                          focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition" />
+
+            <label for="email"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Email
+            </label>
+            <input type="email" id="email" name="email" placeholder="ex. ion@email.com" required
+                   class="mb-5 rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                          text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                          focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition" />
+
+            <label for="message"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Mesaj
+            </label>
+            <textarea id="message" name="message" placeholder="Descrie problema sau serviciul dorit..." required
+                      class="mb-7 min-h-[130px] resize-y rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                             text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                             focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition"></textarea>
+
+            <button type="submit"
+                    class="self-start rounded font-display text-sm font-bold uppercase tracking-widest
+                           bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                           transition hover:bg-amber-600 hover:shadow-[0_6px_28px_rgba(245,158,11,0.5)]
+                           max-[480px]:w-full max-[480px]:self-stretch max-[480px]:text-center">
               Trimite mesaj
             </button>
           </form>
         </div>
       </section>
+
     </main>
-    <footer
-      class="h-[300px] bg-[#3d3d3d] pb-[50px] text-center align-middle max-[900px]:h-auto max-[900px]:px-5 max-[900px]:py-10"
-    >
-      <p id="footer-text" class="pt-20 text-xl text-[#e6e3e3] max-[900px]:mb-5 max-[900px]:pt-0">
+
+    <footer class="flex flex-col items-center gap-5 border-t-[3px] border-amber-500
+                   bg-steel-800 px-10 py-12 text-center
+                   max-[480px]:px-4 max-[480px]:py-9">
+      <img src="img/logo-white.png" alt="Logo Mihail Catan Auto Repair" class="w-24" />
+      <p class="text-xs tracking-wide text-stone-500">
         &copy; 2026 Mihail Catan Auto Repair. Toate drepturile rezervate.
       </p>
-      <img
-        src="img/logo-white.png"
-        alt="Logo Mihail Catan Auto Repair"
-        id="footer-logo"
-        class="m-[30px] inline-block max-w-[100px] align-middle"
-      />
-      <p id="contact-info" class="block text-xl text-[#e6e3e3]">
-        Contact: (+373) 069 846 284 |
-        <a href="mailto:info@autorepair.com" class="text-[#e6e3e3] no-underline hover:underline"
-          >info@autorepair.com</a
-        >
+      <p class="text-[0.95rem] text-stone-400">
+        (+373) 069 846 284 &nbsp;|&nbsp;
+        <a href="mailto:info@autorepair.com"
+           class="text-amber-500 no-underline transition hover:text-amber-600 hover:underline">
+          info@autorepair.com
+        </a>
       </p>
     </footer>
+
+    <script>lucide.createIcons();</script>
   </body>
 </html>

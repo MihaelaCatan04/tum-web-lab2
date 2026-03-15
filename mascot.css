@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 480px) {
-  #mascot-wrapper { width: 70px; left: 10px; }
-  #mascot-img     { width: 70px; }
-  #mascot-bubble  { left: 80px; width: 160px; font-size: 12px; }
+  #mascot-wrapper { display: none; }
+  #mascot-img     { display: none; }
+  #mascot-bubble  { display: none; }
 }
