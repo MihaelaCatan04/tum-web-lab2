@@ -1,0 +1,18 @@
+intro_text: >
+  La Mihail Catan Auto Repair, ne mândrim cu angajamentul nostru față de calitate,
+  onestitate și satisfacția clienților. Iată de ce suntem alegerea potrivită:
+bullets:
+  - text: "Experiență de peste 30 ani în reparații și întreținere auto pentru orice tip de automobil."
+  - text: "Explicăm fiecare reparație în detaliu și oferim întotdeauna un preț corect."
+  - text: "Folosim doar scule profesionale și piese de calitate superioară."
+  - text: "Lucrări rapide și eficiente — fără așteptare inutilă."
+  - text: "Servicii complete: schimb ulei, frâne, baterie, motor și aer condiționat."
+stats:
+  - value: "30+"
+    label: "Ani experiență"
+  - value: "6"
+    label: "Servicii complete"
+  - value: "100%"
+    label: "Piese calitate"
+  - value: "★★★★★"
+    label: "Satisfacție clienți"

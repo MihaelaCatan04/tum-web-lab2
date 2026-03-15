@@ -1,0 +1,342 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mihail Catan Auto Repair</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/logo-black.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/mascot.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans:    ['Barlow', 'sans-serif'],
+              display: ['Barlow Condensed', 'sans-serif'],
+            },
+            colors: {
+              amber: {
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+              },
+              steel: {
+                900: '#111111',
+                800: '#1a1a1a',
+                700: '#252525',
+                600: '#2e2e2e',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="font-sans bg-stone-100 text-neutral-800">
+
+    <div id="scroll-progress"></div>
+
+    <a href="tel:{{ contact.phone_raw }}"
+       id="call-now-btn"
+       aria-label="Sună acum"
+       class="fixed bottom-7 right-5 z-[9997] hidden items-center rounded-full bg-amber-500 px-5 py-3.5 text-xl text-white shadow-[0_4px_20px_rgba(245,158,11,0.45)] transition hover:bg-amber-600 max-[480px]:flex">
+      &#9742;
+    </a>
+
+    <a href="#contact" id="mascot-wrapper" aria-label="Mergi la Contact">
+      <div id="mascot-bubble">Programează o vizită azi și conduci liniștit mâine!</div>
+      <img id="mascot-img" src="img/mascot.png" alt="Mascota Mikey" />
+    </a>
+
+    <header>
+      <div id="banner"
+           class="relative flex items-center justify-center gap-10 overflow-hidden bg-steel-800 px-10 py-12
+                  max-[900px]:flex-col max-[900px]:gap-5 max-[900px]:px-6 max-[900px]:py-9
+                  max-[480px]:px-4 max-[480px]:py-7">
+
+        <img src="img/logo-white.png"
+             alt="Logo Mihail Catan Auto Repair"
+             class="h-auto w-full max-w-[220px] max-[900px]:max-w-[160px]" />
+
+        <h1 class="font-display text-[clamp(2.4rem,6vw,5.5rem)] font-extrabold uppercase leading-[1.05]
+                   tracking-tight text-stone-200 max-[900px]:text-center">
+          Mașina Ta,<br>Prioritatea Noastră
+        </h1>
+      </div>
+
+      <nav class="sticky top-0 z-[100] flex w-full flex-wrap bg-steel-900 border-b-2 border-amber-500">
+        <a href="#home"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Acasă
+        </a>
+        <a href="#services"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Servicii
+        </a>
+        <a href="#about"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Despre noi
+        </a>
+        <a href="#reviews"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Recenzii
+        </a>
+        <a href="#contact"
+           class="block px-5 py-4 font-display text-sm font-semibold uppercase tracking-widest
+                  text-stone-300 transition hover:bg-white/5 hover:text-amber-500
+                  max-[480px]:px-3.5 max-[480px]:py-3 max-[480px]:text-xs">
+          Contact
+        </a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="home" class="bg-stone-100">
+        <div class="mx-auto grid max-w-5xl grid-cols-2 items-center gap-16 px-10 py-20
+                    max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+          <div>
+            <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-extrabold uppercase leading-[1.1] text-neutral-800">
+                Bine ați venit la<br>
+              <span class="text-amber-500">Mihail Catan</span> Auto Repair
+            </h2>
+            <div class="my-4 h-1 w-12 bg-amber-500"></div>
+            <p class="mb-9 text-[1.05rem] leading-[1.8] text-neutral-600">
+              {{ home.intro_text }}
+            </p>
+            <a href="#contact"
+               class="inline-block rounded font-display text-sm font-bold uppercase tracking-widest
+                      bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                      transition hover:bg-amber-600 hover:shadow-[0_6px_28px_rgba(245,158,11,0.45)]
+                      max-[480px]:w-full max-[480px]:text-center">
+                Programează o vizită
+            </a>
+          </div>
+          <div id="home-image-wrap">
+            <img src="img/car.jpg"
+                 alt="Imagine mașină"
+                 class="h-[340px] w-full rounded object-cover object-center
+                        max-[900px]:h-[240px]" />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="bg-steel-800">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Servicii <span class="text-amber-500">disponibile</span>
+          </h2>
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <div class="mt-2 grid grid-cols-3 gap-6
+                      max-[900px]:grid-cols-2
+                      max-[480px]:grid-cols-1">
+
+            {% for service in services.items %}
+            <div class="flex flex-col items-center rounded border border-steel-600 border-b-[3px]
+                        border-b-amber-500 bg-steel-600 p-9 text-center
+                        transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+              <i data-lucide="{{ service.icon }}" class="mx-auto mb-5 h-16 w-16 text-amber-500"></i>
+              <p class="mb-7 flex-1 text-left text-[0.95rem] leading-[1.75] text-stone-400">
+                {{ service.description }}
+              </p>
+              <a href="#contact"
+                 class="inline-block rounded border-2 border-stone-300 font-display text-xs font-bold
+                        uppercase tracking-widest px-7 py-3 text-stone-300
+                        transition hover:border-amber-500 hover:bg-amber-500 hover:text-white">
+                Află mai mult
+              </a>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="bg-stone-100">
+        <div class="mx-auto grid max-w-5xl grid-cols-2 items-start gap-16 px-10 py-20
+                    max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+          <div>
+            <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                       leading-[1.1] tracking-wide text-neutral-800">
+              De ce să <span class="text-amber-500">ne alegi?</span>
+            </h2>
+            <div class="my-4 h-1 w-12 bg-amber-500"></div>
+            <p class="mb-6 text-[1.05rem] leading-[1.8] text-neutral-600">
+              {{ about.intro_text }}
+            </p>
+
+            <ul class="mb-9 divide-y divide-stone-200">
+              {% for bullet in about.bullets %}
+              <li class="flex items-start gap-3.5 py-4 text-[1rem] leading-[1.65] text-neutral-700">
+                <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center
+                             rounded-full bg-amber-500 text-[0.6rem] font-bold text-white">✓</span>
+                {{ bullet.text }}
+              </li>
+              {% endfor %}
+            </ul>
+
+            <a href="#contact"
+               class="inline-block rounded font-display text-sm font-bold uppercase tracking-widest
+                      bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                      transition hover:bg-amber-600 max-[480px]:w-full max-[480px]:text-center">
+                Programează o vizită
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4 self-center">
+            {% for stat in about.stats %}
+            <div class="flex flex-col items-center rounded border-b-[3px] border-amber-500
+                        bg-steel-800 px-6 py-8 text-center">
+              <span class="font-display text-[2.8rem] font-extrabold leading-none text-amber-500">{{ stat.value }}</span>
+              <span class="mt-2 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">{{ stat.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </section>
+
+      <section id="reviews" class="bg-steel-700">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Ce spun <span class="text-amber-500">clienții</span>
+          </h2>
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <div class="mt-2 grid grid-cols-3 gap-5
+                      max-[900px]:grid-cols-2
+                      max-[580px]:grid-cols-1">
+
+            {% for review in reviews.items %}
+            <div class="flex flex-col gap-4 rounded border border-steel-600 bg-steel-600 p-7 text-left
+                        transition duration-200 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.4)]">
+              <div class="flex gap-1 text-amber-500 text-sm">
+                {% for i in range(review.rating) %}
+                <i class="fa fa-star"></i>
+                {% endfor %}
+              </div>
+              <p class="review-quote flex-1 text-[0.95rem] italic leading-[1.75] text-stone-400">{{ review.quote }}</p>
+              <p class="font-display text-right text-xs font-bold uppercase tracking-widest text-stone-300">— {{ review.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-steel-900">
+        <div class="mx-auto max-w-5xl px-10 py-20 text-center
+                    max-[900px]:px-6 max-[900px]:py-14
+                    max-[480px]:px-4 max-[480px]:py-10">
+
+          <h2 class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold uppercase
+                     tracking-wide leading-[1.1] text-stone-200">
+            Contactează<span class="text-amber-500">-ne</span>
+          </h2>
+          <div class="mx-auto my-4 h-1 w-12 bg-amber-500"></div>
+
+          <p class="mx-auto mb-10 max-w-xl text-[1.05rem] leading-[1.8] text-stone-400">
+            {{ contact.intro_text }}
+          </p>
+
+          <form id="contact-form" class="mx-auto flex max-w-lg flex-col text-left" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+
+            <label for="name"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Nume
+            </label>
+            <input type="text" id="name" name="name" placeholder="ex. Ion Popescu" required
+                   class="mb-5 rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                          text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                          focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition" />
+
+            <label for="email"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Email
+            </label>
+            <input type="email" id="email" name="email" placeholder="ex. ion@email.com" required
+                   class="mb-5 rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                          text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                          focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition" />
+
+            <label for="message"
+                   class="mb-1.5 font-display text-xs font-semibold uppercase tracking-widest text-stone-400">
+              Mesaj
+            </label>
+            <textarea id="message" name="message" placeholder="Descrie problema sau serviciul dorit..." required
+                      class="mb-7 min-h-[130px] resize-y rounded border border-steel-600 bg-steel-600 px-4 py-3.5
+                             text-[1rem] text-stone-200 outline-none placeholder:text-stone-500
+                             focus:border-amber-500 focus:ring-2 focus:ring-amber-500/25 transition"></textarea>
+
+            <button type="submit"
+                    class="self-start rounded font-display text-sm font-bold uppercase tracking-widest
+                           bg-amber-500 px-9 py-3.5 text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)]
+                           transition hover:bg-amber-600 hover:shadow-[0_6px_28px_rgba(245,158,11,0.5)]
+                           max-[480px]:w-full max-[480px]:self-stretch max-[480px]:text-center">
+                Trimite mesaj
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="flex flex-col items-center gap-5 border-t-[3px] border-amber-500
+                   bg-steel-800 px-10 py-12 text-center
+                   max-[480px]:px-4 max-[480px]:py-9">
+      <img src="img/logo-white.png" alt="Logo Mihail Catan Auto Repair" class="w-24" />
+      <p class="text-xs tracking-wide text-stone-500">
+        &copy; 2026 Mihail Catan Auto Repair. Toate drepturile rezervate.
+      </p>
+      <p class="text-[0.95rem] text-stone-400">
+        {{ contact.phone_display }} &nbsp;|&nbsp;
+        <a href="mailto:{{ contact.email }}"
+           class="text-amber-500 no-underline transition hover:text-amber-600 hover:underline">
+          {{ contact.email }}
+        </a>
+      </p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
