@@ -53,6 +53,14 @@ collections:
                   - { label: "Cheie", value: "wrench" }
                   - { label: "Unelte", value: "settings" }
               - { label: "Descriere", name: "description", widget: "text" }
+              - { label: "Titlu serviciu", name: "title", widget: "string" }
+              - label: "Indisponibil"
+                name: "unavailable"
+                widget: "boolean"
+                default: false
+                options:
+                  - { label: "Da", value: true }
+                  - { label: "Nu", value: false }
 
   - name: "about_section"
     label: "Despre noi"
