@@ -3,7 +3,7 @@ items:
     description: Menține motorul în stare optimă cu schimb rapid de ulei. Folosim
       uleiuri de calitate superioară pentru performanță și durabilitate.
     title: Schimb ulei
-    unavailable: false
+    unavailable: true
   - icon: circle-dot
     description: Asigură siguranța pe drum cu serviciile noastre pentru roți. Oferim
       rotire, echilibrare și înlocuire anvelope de calitate.
